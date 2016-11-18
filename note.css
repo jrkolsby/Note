@@ -1,0 +1,363 @@
+@font-face {
+	font-family: 'Inconsolata';
+	src: url('assets/inconsolata/inconsolata.eot');
+	src: url('assets/inconsolata/inconsolata.eot') format('embedded-opentype'), url('assets/inconsolata/inconsolata.woff') format('woff'), url('assets/inconsolata/inconsolata.ttf') format('truetype'), url('assets/inconsolata/inconsolata.svg#InconsolataMedium') format('svg');
+}
+.note-highlight {
+	background: #FDE737;
+	border-radius: 8px;
+	cursor: pointer;
+	display: none;
+	opacity: 0.5;
+	position: absolute;
+	z-index: 9997;
+}
+textarea.note-edit {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	background: #FCF9F9;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	box-shadow: 0 5px 12px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.2);
+	box-sizing: border-box;
+	box-sizing: border-box;
+	color: #4D4D4D;
+	display: none;
+	font-family: 'Inconsolata', sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 20px;
+	opacity: 0.9;
+	outline: none;
+	overflow: hidden;
+	padding: 20px;
+	position: absolute;
+	resize: none;
+	width: 240px;
+	z-index: 9998;
+}
+.note-edit-arrow {
+	border-bottom: 21px solid rgba(0,0,0,0.2);
+	border-left: 21px solid transparent;
+	border-right: 21px solid transparent;
+	border-top: 21px solid transparent;
+	display: none;
+	height: 0;
+	margin-top: -42px;
+	opacity: 0.9;
+	position: absolute;
+	width: 0;
+	z-index: 9998;
+}
+.note-edit-arrow::before {
+	border-bottom: 20px solid #FCF9F9;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid transparent;
+	bottom: 18px;
+	content: "";
+	display: block;
+	height: 0;
+	position: relative;
+	right: 20px;
+	width: 0;
+	z-index: 9998;
+}
+.note-edit-arrow.bottom {
+	border-bottom: 21px solid transparent;
+	border-left: 21px solid transparent;
+	border-right: 21px solid transparent;
+	border-top: 21px solid rgba(0,0,0,0.2);
+	display: none;
+	height: 0;
+	margin-top: -39px;
+	position: absolute;
+	width: 0;
+	z-index: 9998;
+}
+.note-edit-arrow.bottom::before {
+	border-bottom: 20px solid transparent;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #FCF9F9;
+	bottom: 22px;
+	content: "";
+	display: block;
+	height: 0;
+	position: relative;
+	right: 20px;
+	width: 0;
+	z-index: 9997;
+}
+#note-shadow {
+	background: #000;
+	cursor: pointer;
+	display: none;
+	height: 100%;
+	left: 0;
+	opacity: 0.3;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 9998;
+}
+#note-login {
+	-moz-box-shadow: 0 0 100px rgba(0,0,0,0.5);
+	-o-box-shadow: 0 0 100px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 100px rgba(0,0,0,0.5);
+	background: rgba(17,17,17,0.65);
+	border-radius: 6px;
+	box-shadow: 0 0 100px rgba(0,0,0,0.5);
+	display: none;
+	height: 215px;
+	left: 50%;
+	margin-left: -102px;
+	margin-top: -126px;
+	position: fixed;
+	top: 50%;
+	width: 204px;
+	z-index: 9999;
+}
+#note-login input#password {
+	border-top: 2px solid #fcf9f9;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	top: 105px;
+}
+#note-login input#username {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	top: 65px;
+}
+#note-login::after {
+	border-bottom: 20px solid rgba(17,17,17,0.58);
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid transparent;
+	content: "";
+	height: 0;
+	left: 82px;
+	position: absolute;
+	top: -40px;
+	width: 0;
+}
+#note-login button {
+	-moz-transition: background .2s ease;
+	-o-transition: background .2s ease;
+	-webkit-transition: background .2s ease;
+	background: #FF6664;
+	border: none;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 14px;
+	outline: none;
+	text-transform: uppercase;
+	top: 161px;
+	transition: background .2s ease;
+}
+#note-login input {
+	-moz-box-sizing: border-box;
+	-moz-transition: color .4s ease;
+	-o-transition: color .4s ease;
+	-webkit-box-sizing: border-box;
+	-webkit-transition: color .24s ease;
+	background: #fff;
+	border: none;
+	box-sizing: border-box;
+	color: #bbb;
+	font-family: 'Inconsolata', sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: 0.5px;
+	padding: 13px;
+	transition: color .4s ease;
+}
+#note-login input,
+#note-login button {
+	border-radius: 4px;
+	height: 40px;
+	left: 7%;
+	position: absolute;
+	width: 86%;
+}
+#note-login button:hover {
+	-moz-transition: background .2s ease;
+	-o-transition: background .2s ease;
+	-webkit-transition: background .2s ease;
+	background: #ff8583;
+	transition: background .2s ease;
+}
+#note-login input:focus {
+	-moz-transition: color .4s ease;
+	-o-transition: color .4s ease;
+	-webkit-transition: color .4s ease;
+	color: #282828;
+	outline: none;
+	transition: color .4s ease;
+}
+#note-login h1 {
+	color: #fff;
+	font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	height: 22px;
+	margin: 0;
+	position: absolute;
+	text-align: center;
+	top: 20px;
+	width: 100%;
+}
+.note-toolbar-right {
+	background: url('assets/right.png');
+	background-image: url('assets/right.svg'), none;
+}
+.note-toolbar-left {
+	background: url('assets/left.png');
+	background-image: url('assets/left.svg'), none;
+}
+.note-toolbar-delete {
+	background: url('assets/delete.png');
+	background-image: url('assets/delete.svg'), none;
+}
+.note-toolbar-delete::after,
+.note-toolbar-copy::after,
+.note-toolbar-upload::after {
+	-moz-box-sizing: border-box;
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	-webkit-box-sizing: border-box;
+	-webkit-transition: all .2s ease;
+	border-radius: 4px;
+	box-sizing: border-box;
+	color: #fff;
+	font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	height: 29px;
+	left: 20px;
+	opacity: 0;
+	padding: 8px 8px;
+	pointer-events: none;
+	position: absolute;
+	text-transform: uppercase;
+	top: -7px;
+	transition: all .2s ease;
+	z-index: 9998;
+}
+.note-toolbar-delete::after {
+	background: rgba(255,101,99,0.7);
+	content: "Will delete block";
+	width: 133px;
+}
+.note-toolbar-right:hover,
+.note-toolbar-left:hover,
+.note-toolbar-delete:hover,
+.note-toolbar-copy:hover,
+.note-toolbar-upload:hover {
+	-moz-transition: opacity .2s ease;
+	-o-transition: opacity .2s ease;
+	-webkit-transition: opacity .2s ease;
+	opacity: 1;
+	transition: opacity .2s ease;
+}
+.note-toolbar-copy {
+	background: url('assets/copy.png');
+	background-image: url('assets/copy.svg'), none;
+}
+.note-toolbar-copy::after {
+	background: rgba(103,164,217,0.7);
+	content: "Will copy block";
+	width: 120px;
+}
+.note-toolbar-upload {
+	background: url('assets/upload.png');
+	background-image: url('assets/upload.svg'), none;
+}
+.note-toolbar-upload::after {
+	background: rgba(148,195,130,0.8);
+	content: "Will upload file";
+	width: 120px;
+}
+.note-toolbar-right,
+.note-toolbar-left,
+.note-toolbar-delete,
+.note-toolbar-copy,
+.note-toolbar-upload {
+	-moz-transition: opacity .2s ease;
+	-o-transition: opacity .2s ease;
+	-webkit-transition: opacity .2s ease;
+	cursor: pointer;
+	height: 20px;
+	left: 9px;
+	margin-bottom: 14px;
+	opacity: 0.6;
+	position: relative;
+	transition: opacity .2s ease;
+	width: 20px;
+	z-index: 9999;
+}
+.note-toolbar-delete.note-selected,
+.note-toolbar-copy.note-selected,
+.note-toolbar-upload.note-selected { opacity: 1 }
+.note-toolbar-delete.note-selected::after,
+.note-toolbar-copy.note-selected::after,
+.note-toolbar-upload.note-selected::after {
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	-webkit-transition: all .2s ease;
+	left: 40px;
+	opacity: 0.9;
+	transition: all .2s ease;
+}
+.note-toolbar {
+	-moz-box-shadow: 0px 2px 11px 0px rgba(0,0,0,0.50), 0px 0px 0px 1px rgba(0,0,0,0.80);
+	-webkit-box-shadow: 0px 2px 11px 0px rgba(0,0,0,0.50), 0px 0px 0px 1px rgba(0,0,0,0.80);
+	background: rgba(54,55,60,0.9);
+	border: 1px solid rgba(255,254,254,0.16);
+	border-radius: 6px;
+	box-shadow: 0px 2px 11px 0px rgba(0,0,0,0.50), 0px 0px 0px 1px rgba(0,0,0,0.80);
+	display: none;
+	position: absolute;
+	width: 38px;
+	z-index: 9999;
+}
+.note-upload { display: none }
+.note-toolbar div:nth-child(1) { margin-top: 10px }
+.note-toolbar div:last-child { margin-bottom: 10px }
+#note-announce {
+	overflow: visible;
+	position: fixed;
+	right: 20px;
+	top: 20px;
+	width: 250px;
+	z-index: 9997;
+}
+.note-announce {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	background: rgba(252,249,249,0.7);
+	border-radius: 5px;
+	box-shadow: 0 5px 12px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.1);
+	box-sizing: border-box;
+	color: #4D4D4D;
+	display: block;
+	font-family: 'Inconsolata', sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 19px;
+	overflow: auto;
+	overflow-x: hidden;
+	padding: 10px 20px;
+	width: 250px;
+	word-wrap: break-word;
+}
+.note-announce b {
+	color: #000;
+	font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
